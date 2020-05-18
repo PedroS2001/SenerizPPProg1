@@ -81,17 +81,17 @@ void ordenarNotebook(eNotebook* notebook, int len)
     {
         for(j=i+1; j<len; j++)
         {
-            if( stricmp(notebook[i].marca, notebook[j].marca) < 0 )
+            if( stricmp(notebook[i].marca, notebook[j].marca) > 0 )
             {
                 aux = notebook[i];
                 notebook[i] = notebook[j];
                 notebook[j] = aux;
             }
-            else if(stricmp(notebook[i].marca, notebook[j].marca) == 0 && notebook[i].precio < notebook[j].precio);
+            else if(strcmp(notebook[i].marca, notebook[j].marca) == 0 && notebook[i].precio > notebook[j].precio)
             {
-                aux = notebook[i];
-                notebook[i] = notebook[j];
-                notebook[j] = aux;
+                aux=notebook[i];
+                notebook[i]=notebook[j];
+                notebook[j]=aux;
             }
         }
     }
