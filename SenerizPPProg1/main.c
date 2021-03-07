@@ -36,6 +36,7 @@ int main()
 
 
 
+    mostrarNotebooks(notebooks,TAM);
     ordenarNotebook(notebooks,TAM);
     mostrarNotebooks(notebooks,TAM);
 
@@ -62,7 +63,7 @@ int contarCaracteres(char cadena[], char caracter)
 
     while(cadena[i] != '\0')
     {
-        if(cadena[i]==caracter)
+        if(cadena[i] == caracter)
         {
             contador++;
         }
@@ -87,11 +88,11 @@ void ordenarNotebook(eNotebook* notebook, int len)
                 notebook[i] = notebook[j];
                 notebook[j] = aux;
             }
-            else if(strcmp(notebook[i].marca, notebook[j].marca) == 0 && notebook[i].precio > notebook[j].precio)
+            else if(stricmp(notebook[i].marca, notebook[j].marca) == 0 && notebook[i].precio > notebook[j].precio)
             {
-                aux=notebook[i];
-                notebook[i]=notebook[j];
-                notebook[j]=aux;
+                aux = notebook[i];
+                notebook[i] = notebook[j];
+                notebook[j] = aux;
             }
         }
     }
